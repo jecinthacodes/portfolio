@@ -646,6 +646,7 @@ if (!reduceMotion) {
 
 /* ---- scroll reveals ---- */
 document.querySelectorAll('[data-reveal]').forEach(el=>{
+  if (el.closest('.work-grid')) return;
   gsap.from(el, {
     opacity:0, y:36, duration:.7, ease:'power3.out',
     scrollTrigger: { trigger: el, start:'top 88%' }
